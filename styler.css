@@ -171,10 +171,10 @@ button:hover {
 
 /* Each Canvas (Chart Box) */
 #chartCanvas {
-  max-width: 500px;  /* keeps the chart from stretching too wide */
-  max-height: 350px; /* keeps the chart height reasonable */
-  width: 100%;       /* responsive width */
-  height: auto;      /* height adjusts with width */
+  max-width: 500px; 
+  max-height: 350px; 
+  width: 100%;       
+  height: auto;      
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

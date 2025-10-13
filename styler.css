@@ -1,0 +1,205 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #fff;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header (Navbar) */
+.header {
+  background-color: #de83837e;
+  padding: 16px 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.options a {
+  text-decoration: none;
+  color: #0e0b0b;
+  background-color: white;
+  padding: 10px 24px;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: 1px 2px 2px #eee;
+  transition: all 0.2s ease-in-out;
+}
+
+.options a:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 30px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.input-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 40px;
+  align-items: center;
+}
+
+.input-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.input-list label {
+  font-weight: 600;
+}
+
+.input-list input {
+  width: 200px;
+  height: 36px;
+  padding: 0 8px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: 1px 1px 2px #aaa;
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  margin-top: 22px;
+  background-color: rgb(139, 203, 223);
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #000;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(109, 180, 203);
+  transform: scale(1.03);
+}
+
+/* KPI Results Section */
+.results {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.results-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.results-list li {
+  background-color: rgb(196, 219, 239);
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 3px 2px #999;
+  padding: 20px 30px;
+  width: 180px;
+  text-align: center;
+}
+
+.metric-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.results-list input {
+  border: none;
+  background-color: rgb(196, 219, 239);
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #000;
+  outline: none;
+}
+
+/* Chart Section */
+.chart-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+#chart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Each Canvas (Chart Box) */
+#chartCanvas {
+  max-width: 500px;  /* keeps the chart from stretching too wide */
+  max-height: 350px; /* keeps the chart height reasonable */
+  width: 100%;       /* responsive width */
+  height: auto;      /* height adjusts with width */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+#chartCanvas:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .results-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #chart canvas {
+    max-width: 90%;
+  }
+}

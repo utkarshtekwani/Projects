@@ -1,0 +1,74 @@
+<!-- Hotel KPI Calculator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel KPI Calculator</title>
+  <link rel="stylesheet" href="styler.css">
+  <!-- Include Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <ul class="options">
+        <li><a href="#">KPI Calculator</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <ul class="input-list">
+        <li>
+          <label for="total_rooms">Total Rooms Available</label>
+          <input id="total_rooms" class="total_room" placeholder="Eg 300" type="number">
+        </li>
+        <li>
+          <label for="rooms_sold">Rooms Sold</label>
+          <input id="rooms_sold" class="room_sold" placeholder="Eg 200" type="number">
+        </li>
+        <li>
+          <label for="total_revenue">Total Rooms Revenue</label>
+          <input id="total_revenue" class="total_room_revenue" placeholder="Eg 20000" type="number">
+        </li>
+        <li>
+          <button type="button" onclick="Calculate()">Submit</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- KPI Results -->
+    <main class="results">
+      <ul class="results-list">
+        <li>
+          <div class="metric-title">Occupancy</div>
+          <input class="occup" readonly>
+        </li>
+        <li>
+          <div class="metric-title">ADR</div>
+          <input class="adr" readonly>
+        </li>
+        <li>
+          <div class="metric-title">RevPar</div>
+          <input class="rev" readonly>
+        </li>
+      </ul>
+    </main>
+
+    <!-- Chart Section -->
+    <section class="chart-section">
+        <canvas id="chartCanvas" width="500" height="350"></canvas>
+    </section>
+
+  </div>
+
+  <!-- JS File -->
+  <script src="scripting.js"></script>
+</body>
+</html>

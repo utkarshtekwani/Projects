@@ -41,7 +41,7 @@ window.onload = function() {
     },
     options: {
       responsive: true,
-      interaction: { mode: 'index', intersect: false },
+      interaction: { mode: 'nearest', intersect: false },
       plugins: {
         legend: { position: 'bottom' },
         tooltip: {
@@ -88,29 +88,66 @@ function Calculate() {
   const roomsSold = parseFloat(document.getElementById("rooms_sold").value);
   const totalRevenue = parseFloat(document.getElementById("total_revenue").value);
 
-  if (!totalRooms || !roomsSold || !totalRevenue || totalRooms === 0) {
-    alert("Please enter valid numeric values for all fields!");
+  // 🔹 Validate numeric input
+  if (isNaN(totalRooms) || isNaN(roomsSold) || isNaN(totalRevenue)) {
+    alert("Please enter numeric values for all fields!");
     return;
   }
 
-  // KPI Calculations
-  const occupancy = (roomsSold / totalRooms) * 100;
-  const adr = totalRevenue / roomsSold;
-  const revpar = totalRevenue / totalRooms;
+  if (totalRooms < 0 || roomsSold < 0 || totalRevenue < 0) {
+    alert("Values cannot be negative!");
+    return;
+  }
 
-  // Display results
-  document.querySelector(".occup").value = occupancy.toFixed(2) + "%";
-  document.querySelector(".adr").value = "$" + adr.toFixed(2);
-  document.querySelector(".rev").value = "$" + revpar.toFixed(2);
+  if (roomsSold > totalRooms) {
+    alert("Rooms sold cannot exceed total rooms!");
+    return;
+  }
 
-  // Update chart
-  renderCharts(occupancy, adr, revpar);
+  // 🔹 Compute safely
+  let occupancy, adr, revpar;
+
+  // Handle Occupancy & RevPAR when totalRooms = 0
+  if (totalRooms === 0) {
+    occupancy = "N/A";
+    revpar = "N/A";
+  } else {
+    occupancy = ((roomsSold / totalRooms) * 100).toFixed(2) + "%";
+    revpar = "$" + (totalRevenue / totalRooms).toFixed(2);
+  }
+
+  // Handle ADR when roomsSold = 0
+  if (roomsSold === 0) {
+    adr = "N/A";
+    // If revenue exists when no rooms are sold
+    if (totalRevenue !== 0) {
+      alert("If no rooms are sold, total revenue must be $0.");
+      return;
+    }
+  } else {
+    adr = "$" + (totalRevenue / roomsSold).toFixed(2);
+  }
+
+  // 🔹 Display results gracefully
+  document.querySelector(".occup").value = occupancy;
+  document.querySelector(".adr").value = adr;
+  document.querySelector(".rev").value = revpar;
+
+  // 🔹 Update chart only if numeric
+  const occVal = occupancy === "N/A" ? 0 : parseFloat(occupancy);
+  const adrVal = adr === "N/A" ? 0 : parseFloat(adr.replace("$", ""));
+  const revVal = revpar === "N/A" ? 0 :parseFloat(revpar.replace("$", ""));
+
+  renderCharts(occVal, adrVal, revVal);
 }
 
-// Function to update chart data
+// Function to update chart values
 function renderCharts(occupancy, adr, revpar) {
+  if (!chartInstance) return;
+
   chartInstance.data.datasets[0].data[0] = adr;
   chartInstance.data.datasets[1].data[0] = revpar;
   chartInstance.data.datasets[2].data[0] = occupancy;
+
   chartInstance.update();
 }

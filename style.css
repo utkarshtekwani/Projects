@@ -1,0 +1,170 @@
+*{
+    border:border-box;
+    margin:0px;
+    font-family: arial;
+}
+.navbar{
+    background-color: black;
+    color:white;
+    height:50px;
+    display: flex;
+    align-items: center;
+   
+   
+}
+.navlogo{
+    height:50px;
+    width:100px;
+}
+  
+.logo{
+    background-image: url('amazon_logo.png');
+    background-size: cover;
+    height: 100%;
+    width : 100%;
+  
+}
+.location{
+    margin-left:30px;
+}
+.search-bar{
+    margin-left: 60px;
+    height: 50px;
+    width:25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.search{
+    margin-top:10px;
+   
+    height:40px;
+}
+input{
+    width:20rem;
+    color:black;
+    height:2rem;
+}
+.search-icon{
+    width:45px;
+    height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    
+}
+.return-addrress{
+    position:relative;
+    left:500px;
+}
+.id-account{
+    position:relative;
+    left:600px;
+}
+.icon i{
+    font-size: 2rem;
+    
+}
+.second-panel{
+    background-color: rgba(116, 112, 112, 0.484);
+    height: 40px;
+    display: flex;
+    
+    align-items: center;
+    
+    
+   
+}
+.second-start{
+    position
+
+}
+.second-start a{
+    margin-left:20px;
+    
+    
+}
+.image-section{
+    height:20rem;
+    background-image: url("hero_image.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.text-box{
+    background-color: white;
+    background-size: cover;
+    height:40px;
+    width:50rem;
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top:15rem;
+    
+    
+}
+.text-box a{
+    text-decoration: none;
+}
+.main-box{
+    background-color: rgba(117, 94, 94, 0.253);
+    height: 50rem;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    gap:100px;
+  
+}
+.box-content{
+    background-color: white;
+    height:15rem;
+    width:15rem;
+    border:2px solid black;
+    margin-top: 15px;
+}
+.image1{
+    background-image: url("box1_image.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: block;
+
+}
+.panel-bottom{
+    background-color: rgb(103, 101, 111);
+    height:70px;
+    color:white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+}
+.options-bottom{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.option1{
+    
+   
+    height:10rem;
+    width:10rem;
+    
+    display: flex;
+    flex-direction: column;
+}
+.option1 a{
+    margin-top: 10px;
+}
+.panel-bt{
+    background-color: black;
+    height: 50px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

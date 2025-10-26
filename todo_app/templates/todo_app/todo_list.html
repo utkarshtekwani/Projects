@@ -17,7 +17,7 @@
                 <div>
                     <div 
                     role = "button"
-                    onclick = "location.href = '{% url "item-update" todo_list.id todo.id %}'">
+                    onclick = "location.href = '{% url "item-update" todo_list.id todo.id %}'" style = "cursor:pointer;">
                     {{todo.title}}
                     (Due{{todo.due_date|date:"l, F j"}})
 

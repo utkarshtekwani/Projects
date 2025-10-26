@@ -9,11 +9,11 @@
 <ul>
     {% for todolist in object_list %}
     <li>
-        <div
-            role="button"
-            onclick="location.href='{% url "list" todolist.id %}'">
+        <a
+            
+            href='{% url "list" todolist.id %}'>
             {{ todolist.title }}
-        </div>
+        </a>
     </li>
     {% empty %}
     <h4>You have no lists!</h4>

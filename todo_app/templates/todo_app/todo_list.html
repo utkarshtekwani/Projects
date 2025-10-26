@@ -17,7 +17,7 @@
                 <div>
                     <a
                     
-                    location.href = '{% url "item-update" todo_list.id todo.id %}' >
+                    location.href = '{% url "item-update" todo_list.id todo.id %}' style = "text-decoration:none;" >
                       
                     {{todo.title}}
                     (Due{{todo.due_date|date:"l, F j"}})

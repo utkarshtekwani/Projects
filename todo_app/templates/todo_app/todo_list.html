@@ -15,11 +15,13 @@
             {% for todo in object_list %}
             <li>
                 <div>
-                    <div 
+                    <div
                     role = "button"
-                    onclick = "location.href = '{% url "item-update" todo_list.id todo.id %}'" style = "cursor:pointer;" >
+                    onclick = "location.href = '{% url "item-update" todo_list.id todo.id %}'"  >
+                    <a>    
                     {{todo.title}}
                     (Due{{todo.due_date|date:"l, F j"}})
+                    </a>
 
                 </div>
                 </div>

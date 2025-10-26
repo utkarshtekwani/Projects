@@ -11,10 +11,10 @@
     <li>
         <div
             role="button"
-            onclick="location.href='{% url "list" todolist.id %}'" >
-            <a>
+            onclick="location.href='{% url "list" todolist.id %}'" onmouseover="this.style.cursor='pointer'" >
+            
             {{ todolist.title }}
-            </a>
+            
         </div>
     </li>
     {% empty %}

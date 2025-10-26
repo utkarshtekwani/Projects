@@ -9,12 +9,11 @@
 <ul>
     {% for todolist in object_list %}
     <li>
-        <a
-            
-            href='{% url "list" todolist.id %}'style = "text-decoration:none;color:black;" onmouseover="this.style.textDecoration='none'; this.style.color='black';"
-   onmouseout="this.style.textDecoration='none'; this.style.color='black';">
+        <div
+            role="button"
+            onclick="location.href='{% url "list" todolist.id %}'">
             {{ todolist.title }}
-        </a>
+        </div>
     </li>
     {% empty %}
     <h4>You have no lists!</h4>

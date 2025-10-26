@@ -15,7 +15,7 @@
           {% for todo in object_list %} 
         <li> 
             <div> 
-                <a href = '{% url "item-update" todo_list.id todo.id %}'style = "text-decoration:None;">
+                <a href = '{% url "item-update" todo_list.id todo.id %}'style = "text-decoration:None;onmouseout="this.style.textDecoration='none';">
                     {{todo.title}} (Due{{todo.due_date|date:"l, F j"}}) 
                 </a> 
             </div> 

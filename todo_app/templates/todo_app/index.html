@@ -11,7 +11,8 @@
     <li>
         <a
             
-            href='{% url "list" todolist.id %}'style = "text-decoration:none;color:black;">
+            href='{% url "list" todolist.id %}'style = "text-decoration:none;color:black;" onmouseover="this.style.textDecoration='none'; this.style.color='black';"
+   onmouseout="this.style.textDecoration='none'; this.style.color='black';">
             {{ todolist.title }}
         </a>
     </li>

@@ -1,9 +1,9 @@
 let chartInstance = null;
 
 window.onload = function() {
-  const ctx = document.getElementById("chartCanvas").getContext("2d");
+  const chart = document.getElementById("chartCanvas").getContext("2d");
 
-  chartInstance = new Chart(ctx, {
+  chartInstance = new Chart(chart, {
     type: 'bar',
     data: {
       labels: ['Hotel KPI'],

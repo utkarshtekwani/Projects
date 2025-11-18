@@ -1,7 +1,5 @@
-// Global chart instance
 let chartInstance = null;
 
-// Function to initialize the chart on page load
 window.onload = function() {
   const ctx = document.getElementById("chartCanvas").getContext("2d");
 
@@ -82,13 +80,11 @@ window.onload = function() {
   });
 };
 
-// Function to calculate KPIs
 function Calculate() {
   const totalRooms = parseFloat(document.getElementById("total_rooms").value);
   const roomsSold = parseFloat(document.getElementById("rooms_sold").value);
   const totalRevenue = parseFloat(document.getElementById("total_revenue").value);
 
-  // 🔹 Validate numeric input
   if (isNaN(totalRooms) || isNaN(roomsSold) || isNaN(totalRevenue)) {
     alert("Please enter numeric values for all fields!");
     return;
@@ -104,10 +100,8 @@ function Calculate() {
     return;
   }
 
-  // 🔹 Compute safely
   let occupancy, adr, revpar;
 
-  // Handle Occupancy & RevPAR when totalRooms = 0
   if (totalRooms === 0) {
     occupancy = "N/A";
     revpar = "N/A";
@@ -116,7 +110,6 @@ function Calculate() {
     revpar = "$" + (totalRevenue / totalRooms).toFixed(2);
   }
 
-  // Handle ADR when roomsSold = 0
   if (roomsSold === 0) {
     adr = "N/A";
     // If revenue exists when no rooms are sold
@@ -128,12 +121,10 @@ function Calculate() {
     adr = "$" + (totalRevenue / roomsSold).toFixed(2);
   }
 
-  // 🔹 Display results gracefully
   document.querySelector(".occup").value = occupancy;
   document.querySelector(".adr").value = adr;
   document.querySelector(".rev").value = revpar;
 
-  // 🔹 Update chart only if numeric
   const occVal = occupancy === "N/A" ? 0 : parseFloat(occupancy);
   const adrVal = adr === "N/A" ? 0 : parseFloat(adr.replace("$", ""));
   const revVal = revpar === "N/A" ? 0 :parseFloat(revpar.replace("$", ""));
@@ -141,7 +132,6 @@ function Calculate() {
   renderCharts(occVal, adrVal, revVal);
 }
 
-// Function to update chart values
 function renderCharts(occupancy, adr, revpar) {
   if (!chartInstance) return;
 

@@ -112,7 +112,7 @@ function Calculate() {
 
   if (roomsSold === 0) {
     adr = "N/A";
-    // If revenue exists when no rooms are sold
+    
     if (totalRevenue !== 0) {
       alert("If no rooms are sold, total revenue must be $0.");
       return;

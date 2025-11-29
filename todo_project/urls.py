@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.http import HttpResponse
-from django.views.generic.base import RedirectView
 
 
 
@@ -26,6 +25,5 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("todo_app.urls")),
-    path('', RedirectView.as_view(url='https://github.com/utkarshtekwani')),
    
 ]

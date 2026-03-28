@@ -1,6 +1,10 @@
 # todo_list/todo_app/views.py
 from django.urls import reverse, reverse_lazy
-#vvvvvvvvvvvvv
+#vvvvvvvvvvvvv'
+
+
+
+
 from django.views.generic import (
     ListView,
     CreateView,
